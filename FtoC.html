@@ -8,17 +8,21 @@
     <link rel="stylesheet" href="FtoC.css">
     <script>
         function calc_c2f(form){
-            var c1 = document.getElementById("cel");
-            var f1 = math.round((c1*(9/5))+32);            
+            let c1 = document.getElementById("cel");
+            console.log(c1.value);
+            let f1 = (c1.value*(9/5))+32;
+            console.log(f1);
             document.getElementById("c2f_result").innerHTML
-            = "= " + f1;
+            = "= " + f1 + " &#8451";
         }
 
         function calc_f2c(form){
             var f2 = document.getElementById("fah");
-            var c2 = math.round((f2-32)*(5/9));            
+            console.log(f2.value);
+            var c2 = (f2.value-32)*(5/9);
+            console.log(c2)            
             document.getElementById("f2c_result").innerHTML
-            = "= " + c2;
+            = "= " + c2 + " &#8457";
         }
 
     </script>
