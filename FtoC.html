@@ -6,6 +6,22 @@
     <meta name="author" content="Ryan Bills">
     <title>Fahrenheit and Centigrade</title>
     <link rel="stylesheet" href="FtoC.css">
+    <script>
+        function calc_c2f(form){
+            var c1 = document.getElementById("cel");
+            var f1 = math.round((c1*(9/5))+32);            
+            document.getElementById("c2f_result").innerHTML
+            = "= " + f1;
+        }
+
+        function calc_f2c(form){
+            var f2 = document.getElementById("fah");
+            var c2 = math.round((f2-32)*(5/9));            
+            document.getElementById("f2c_result").innerHTML
+            = "= " + c2;
+        }
+
+    </script>
 </head>
 <body>
     <header>
@@ -13,7 +29,7 @@
     </header>
     <div class="center">
         <section class="info">
-            <h2>Background</h2>
+            <h2>Background:</h2>
                 <p>
                     Fahrenheit and centigrade are two temperature scales in use today. 
                     <br><br>
@@ -24,16 +40,37 @@
         </section>
     </div>
     <div class="center">
-        <br>
         <section class="info">
             <h2>Formula:</h2>
                 <p>
                     The centigrade to Fahrenheit conversion formula is:
                     <br><br>
-                    C = (5/9) * (F - 32)
+                    <b>C = (5/9) * (F - 32)</b>
                     <br>
                     <i>where C is the centigrade tempurature and F is the Fahrenheit temperature.</i>
                 </p>
+        </section>
+    </div>
+    <div class="center">
+        <section class="info">
+            <form id="c2f">
+                <section>
+                    <h3>Celcius to Fahrenheit</h3>
+                    <input type="number" id="cel" class="in" placeholder="celcius">
+                    <p id="c2f_result">= ?</p>
+                    <input type="button" id="c2f_btn" class="btn" value="Calculate" onclick="calc_c2f(this.form);">
+                </section>
+            </form>
+        </section>
+        <section class="info">
+            <form id="f2c">
+                <section>
+                    <h3>Fahrenheit to Celcius</h3>
+                    <input type="number" id="fah" class="in" placeholder="Fahrenheit">
+                    <p id="f2c_result">= ?</p>
+                    <input type="button" id="f2c_btn" class="btn" value="Calculate" onclick="calc_f2c(this.form);">
+                </section>
+            </form>
         </section>
     </div>
 </body>
